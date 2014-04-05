@@ -1,6 +1,6 @@
-2014-04-05 勉強会
+# 2014-04-05 勉強会
 
-railsを使わずDBからデータを取得しようぜ！
+【railsを使わずにDBからデータを取得してみよう】会！
 
 
 ## 既存モデル関数
@@ -12,4 +12,6 @@ railsを使わずDBからデータを取得しようぜ！
 
 ## TODOリスト
 
-find_by関数が複数のcolumnsを扱えるように修正 (例　find_by_name_and_detail)
+1. find_by関数が複数のcolumnsを扱えるように修正 (例　find_by_name_and_detail)
+2. singletonパターンを実装したConnectionクラスを改善
+3. ...

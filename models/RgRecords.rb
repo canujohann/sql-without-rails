@@ -21,13 +21,10 @@ class RgRecords
 	#find by用
 	def method_missing(method_id, *arguments)
 	  if match = /find_by_([_a-zA-Z]\w*)/.match(method_id.to_s)
-
 	   	columns 	=  get_columns
 	   	column_name = method_id[8..method_id.length]
-	   	
 	   	return nil unless columns.include?(column_name)
-
-	    find(arguments[0])
+	    find_by(column_name, arguments[0])
 	  else
 	    super
 	  end

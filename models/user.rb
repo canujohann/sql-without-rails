@@ -10,6 +10,7 @@ class User < RgRecords
 	end
 
 	#ユーザー検索（IDで）
+	#TODO RgRecordsクラスに入れる！
 	def find(searchId)
 
 		result = @my.query("SELECT id,name,detail from #{@table} where id=#{searchId}")  

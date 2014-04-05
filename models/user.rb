@@ -15,11 +15,11 @@ class User < RgRecords
 		result = @my.query("SELECT id,name,detail from #{@table} where id=#{searchId}")  
 
 		#一致する情報がなければnil
-		return nil if result.length == 0
+		return nil if result.size == 0
 
-		id 		= result[0][0]
-		name 	= result[0][1]
-		details = result[0][2]
+		@id 		= result.first["id"]
+		@name 	= result.first["name"]
+		@detail  = result.first["detail"]
 
 		return self
 

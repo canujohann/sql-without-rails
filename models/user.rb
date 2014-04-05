@@ -12,7 +12,7 @@ class User < RgRecords
 	#ユーザー検索（IDで）
 	def find(searchId)
 
-		result = @@my.query("SELECT id,name,detail from #{@table} where id=#{searchId}")  
+		result = @my.query("SELECT id,name,detail from #{@table} where id=#{searchId}")  
 
 		#一致する情報がなければnil
 		return nil if result.size == 0

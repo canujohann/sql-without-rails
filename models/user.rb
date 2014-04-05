@@ -17,6 +17,7 @@ class User < RgRecords
 		#一致する情報がなければnil
 		return nil if result.size == 0
 
+		#TODO 自動的にマップさせた方がいい　↓↓↓
 		@id 	= result.first["id"]
 		@name 	= result.first["name"]
 		@detail = result.first["detail"]

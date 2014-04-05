@@ -2,6 +2,7 @@ require 'xmlsimple'
 require 'mysql2'
 require 'yaml'
 
+# モデルの親クラス
 class RgRecords
 
 	def initialize()
@@ -10,12 +11,9 @@ class RgRecords
 
 	def connection()
 
-		# MySQL接続 
+		# MySQL接続  singletonパターン
 		require_relative("connection.rb")
 		@database, @my = Connection.instance.connect
-
-		#@database = YAML.load_file('config/database.yml')
-		#@my  = Mysql2::Client.new(:host => @database['hostname'].to_s, :username => @database['username'].to_s, :password => @database['password'].to_s, :database => @database['dbname'].to_s)
 
 		#テーブル名設定
 		@table = self.class.to_s.downcase

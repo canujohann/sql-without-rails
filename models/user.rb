@@ -26,20 +26,4 @@ class User < RgRecords
 
 	end
 
-	#ユーザー検索（IDで）
-	def find_by(search_column, val)
-
-		result = @my.query("SELECT id,name,detail from #{@table} where #{search_column}='#{val}'")  
-
-		#一致する情報がなければnil
-		return nil if result.size == 0
-
-		@id 	= result.first["id"]
-		@name 	= result.first["name"]
-		@detail = result.first["detail"]
-
-		return self
-
-	end
-
 end

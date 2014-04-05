@@ -32,6 +32,23 @@ class RgRecords
 	  end
 	end
 
+	#find by 検索
+	def find_by(search_column, val)
+
+		result = @my.query("SELECT id,name,detail from #{@table} where #{search_column}='#{val}'")  
+
+		#一致する情報がなければnil
+		return nil if result.size == 0
+
+		@id 	= result.first["id"]
+		@name 	= result.first["name"]
+		@detail = result.first["detail"]
+
+		return self
+
+	end
+	
+
 	#テーブルのcolums名を取得
 	def get_columns
 		columns = @my.query("SHOW COLUMNS FROM #{@table} FROM #{@database['dbname'].to_s} ")

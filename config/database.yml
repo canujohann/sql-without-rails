@@ -1,4 +1,4 @@
 hostname: localhost
 username: root
-password: xx
-dbname: benkyoukai
+password:
+dbname: ruby-mysql

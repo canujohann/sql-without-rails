@@ -4,11 +4,11 @@ require 'yaml'
 # モデルの親クラス
 class RgRecords
 
-	def initialize()
+	def initialize
 		raise "抽象クラスなので、インスタンス化できません！"
 	end
 
-	def connection()
+	def connection
 		# MySQL接続  singletonパターン
 		require_relative("connection.rb")
 		@database, @my = Connection.instance.connect
@@ -62,7 +62,8 @@ class RgRecords
 	def set_object_attributes (result)
 		get_columns.each do |column|
 			if result.include?(column)
-			@column= result.first["column"]
+				instance_variable_set("@#{column}", result[column])
+			end
 		end
 	end
 
